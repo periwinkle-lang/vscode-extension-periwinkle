@@ -1,0 +1,113 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Барвінок",
+    "patterns": [
+        { "include": "#function" },
+        { "include": "#function_call" },
+        { "include": "#keywords" },
+        { "include": "#operators" },
+        { "include": "#strings" },
+        { "include": "#constants" },
+        { "include": "#builtin_function" },
+        { "include": "#id" },
+        { "include": "#multiLineComment" },
+        { "include": "#comment" }
+    ],
+    "repository": {
+        "function": {
+            "begin": "\\b(функція)\\b\\s*\\b([а-яА-ЯїієґЇІЄҐ_][а-яА-ЯїієґЇІЄҐ0-9_]*)\\b\\s*\\(",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.барвінок"
+                },
+                "2": {
+                    "name": "entity.name.function.барвінок"
+                }
+            },
+            "end": "\\)",
+            "patterns": [
+                {
+                    "match": "\\b[а-яА-ЯїієґЇІЄҐ_][а-яА-ЯїієґЇІЄҐ0-9_]*\\b",
+                    "name": "variable.parameter.барвінок"
+                },
+                {
+                    "match": ","
+                }
+            ]
+        },
+        "function_call": {
+            "match": "\\b[а-яА-ЯїієґЇІЄҐ_][а-яА-ЯїієґЇІЄҐ0-9_]*\\b(?=\\()",
+            "name": "entity.name.function"
+        },
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.барвінок",
+                "match": "\\b(якщо|або якщо|інакше|кінець|поки|завершити|продовжити)\\b"
+            }]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.new.барвінок",
+                    "match": "(більше=|менше=)|(\\b(не|та|або|більше|менше)\\b)"
+                },
+                {
+                    "name": "keyword.operator.барвінок",
+                    "match": "=|\\+=|-=|\\*=|/=|\\\\=|%=|\\+|-|\\*|/|\\|%|==|!="
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.барвінок",
+            "begin": "\"",
+            "end": "(\")|((?:[^\\\\\\n])$)",
+            "endCaptures": {
+                "2": {
+                    "name": "invalid.illegal.барвінок"
+                }
+            },
+            "patterns": [
+                {
+                    "name": "constant.character.escape.барвінок",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "match": "(0|([1-9][0-9]*))|(([0-9]+[.][0-9]*)|([0-9]*[.][0-9]+))",
+                    "name": "constant.numeric"
+                },
+                {
+                    "match": "\\b(істина|хиба|нич)\\b",
+                    "name": "constant.language"
+                }
+            ]
+        },
+        "builtin_function": {
+            "match": "\\b(друк|друклн)\\b",
+            "name": "entity.name.function"
+        },
+        "id": {
+            "name": "variable",
+            "match": "\\b[а-яА-ЯїієґЇІЄҐ_][а-яА-ЯїієґЇІЄҐ0-9_]*\\b"
+        },
+        "comment": {
+            "name": "comment",
+            "patterns": [{
+                "name": "comment.line.барвінок",
+                "match": "//.*$"
+            }]
+        },
+        "multiLineComment": {
+            "name": "multiLineComment",
+            "patterns": [{
+                "name": "comment.block.барвінок",
+                "begin": "/\\*",
+                "end": "\\*/"
+            }]
+        }
+    },
+    "scopeName": "source.periwinkle"
+}

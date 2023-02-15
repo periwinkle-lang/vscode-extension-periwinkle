@@ -1,0 +1,30 @@
+{
+    "name": "periwinkle-lang",
+    "displayName": "Барвінок",
+    "description": "Мова програмування Барвінок",
+    "version": "0.0.1",
+    "publisher": "periwinkle",
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/periwinkle-lang/vscode-extension-periwinkle.git"
+	},
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "барвінок",
+            "aliases": ["Барвінок", "барвінок"],
+            "extensions": [".бр", ".барвінок"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "барвінок",
+            "scopeName": "source.periwinkle",
+            "path": "./syntaxes/барвінок.tmLanguage.json"
+        }]
+    }
+}
