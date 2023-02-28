@@ -2,7 +2,7 @@
     "name": "periwinkle-lang",
     "displayName": "Барвінок",
     "description": "Мова програмування Барвінок",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "periwinkle",
     "repository": {
 		"type": "git",

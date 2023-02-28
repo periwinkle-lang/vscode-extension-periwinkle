@@ -2,6 +2,8 @@
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "name": "Барвінок",
     "patterns": [
+        { "include": "#multiLineComment" },
+        { "include": "#comment" },
         { "include": "#function" },
         { "include": "#function_call" },
         { "include": "#keywords" },
@@ -9,9 +11,7 @@
         { "include": "#strings" },
         { "include": "#constants" },
         { "include": "#builtin_function" },
-        { "include": "#id" },
-        { "include": "#multiLineComment" },
-        { "include": "#comment" }
+        { "include": "#id" }
     ],
     "repository": {
         "function": {
@@ -42,7 +42,7 @@
         "keywords": {
             "patterns": [{
                 "name": "keyword.control.барвінок",
-                "match": "\\b(якщо|або якщо|інакше|кінець|поки|завершити|продовжити)\\b"
+                "match": "\\b(якщо|або якщо|інакше|кінець|поки|завершити|продовжити|повернути)\\b"
             }]
         },
         "operators": {
