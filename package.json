@@ -3,7 +3,7 @@
     "displayName": "Барвінок",
     "description": "Мова програмування Барвінок",
     "icon": "logo.png",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "periwinkle",
     "repository": {
 		"type": "git",
@@ -20,7 +20,11 @@
             "id": "барвінок",
             "aliases": ["Барвінок", "барвінок"],
             "extensions": [".бр", ".барвінок"],
-            "configuration": "./language-configuration.json"
+            "configuration": "./language-configuration.json",
+            "icon": {
+                "light": "mini-logo.png",
+                "dark": "mini-logo.png"
+            }
         }],
         "grammars": [{
             "language": "барвінок",
