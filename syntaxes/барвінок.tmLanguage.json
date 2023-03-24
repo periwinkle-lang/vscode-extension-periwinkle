@@ -10,7 +10,6 @@
         { "include": "#operators" },
         { "include": "#strings" },
         { "include": "#constants" },
-        { "include": "#builtin_function" },
         { "include": "#id" }
     ],
     "repository": {
@@ -37,12 +36,12 @@
         },
         "function_call": {
             "match": "\\b[а-яА-ЯїієґЇІЄҐ_][а-яА-ЯїієґЇІЄҐ0-9_]*\\b(?=\\()",
-            "name": "entity.name.function"
+            "name": "entity.name.function.барвінок"
         },
         "keywords": {
             "patterns": [{
                 "name": "keyword.control.барвінок",
-                "match": "\\b(якщо|або якщо|інакше|кінець|поки|завершити|продовжити|повернути)\\b"
+                "match": "\\b(якщо|або якщо|інакше|кінець|поки|завершити|продовжити|повернути|кожній|з)\\b"
             }]
         },
         "operators": {
@@ -77,17 +76,13 @@
             "patterns": [
                 {
                     "match": "(0|([1-9][0-9]*))|(([0-9]+[.][0-9]*)|([0-9]*[.][0-9]+))",
-                    "name": "constant.numeric"
+                    "name": "constant.numeric.барвінок"
                 },
                 {
-                    "match": "\\b(істина|хиба|нич)\\b",
-                    "name": "constant.language"
+                    "match": "\\b(істина|хиба|нич|КінецьІтерації)\\b",
+                    "name": "constant.language.барвінок"
                 }
             ]
-        },
-        "builtin_function": {
-            "match": "\\b(друк|друклн)\\b",
-            "name": "entity.name.function"
         },
         "id": {
             "name": "variable",
